@@ -10,7 +10,7 @@ int main()
     string brokenKey;
     string input;
 
-    getline(cin, brokenKey);
+    getline(cin, brokenKey);        // Not "cin >> brokenKey;"；
     len = brokenKey.length();
     for (int i = 0; i < len; i++)
         if (brokenKey[i] != '+')
