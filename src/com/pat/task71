@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int T, K, n1, b, t, n2;
+	cin >> T >> K;
+	bool hasOutPut = false;
+	for (int i = 0; i < K; i++)
+	{
+		cin >> n1 >> b >> t >> n2;
+		if (T < t)
+		{
+			if (hasOutPut) cout << endl;
+			cout << "Not enough tokens.  Total = " << T << ".";
+			hasOutPut = true;
+			continue;
+		}
+		if (n1 < n2 == b)
+		{
+			T += t;
+			if (hasOutPut) cout << endl;
+			cout << "Win " << t << "!  Total = " << T << ".";
+			hasOutPut = true;
+		}
+		else
+		{
+			T -= t;
+			if (hasOutPut) cout << endl;
+			cout << "Lose " << t << ".  Total = " << T << ".";
+			hasOutPut = true;
+		}
+		if (T <= 0)
+		{
+			if (hasOutPut) cout << endl;
+			cout << "Game Over.";
+			hasOutPut = true;
+			break;
+		}
+	}
+
+	return 0;
+}
